@@ -16,7 +16,7 @@
 
 学习现状：学习graphviz，以便自己看懂代码，但是看教程困难重重。  
 
-[graphviz安装使用问题]()
+[graphviz安装使用问题](https://github.com/NieXiangyu/my-work/blob/master/graphviz%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98.md)
 
 
    
