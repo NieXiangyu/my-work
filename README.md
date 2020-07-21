@@ -15,7 +15,9 @@
    问题一：系统路径
    安装在任意喜欢的位置。但是需要把安装目录的graphviz\bin加入环境变量PATH里，环境变量配置：
    桌面计算机右键“属性”→高级系统设置→环境变量→系统变量Path后分号加入graphviz\bin文件完整路径名（其实安装是可以设置加入，不过被杀毒软件阻止了）
-   问题二：运行文件时（输入dot -Tpng first.dot -o first.png），显示Format: "pdf" not recognized，如图：
+   问题二：运行文件时（输入dot -Tpng first.dot -o first.png），显示Format: "pdf" not recognized。
+   解决方法：https://gitlab.com/graphviz/graphviz/-/issues/1315
+   即终端输入dot.exe -c，之后就正常了。（至少我是这样的）
    
    
    
