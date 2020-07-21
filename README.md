@@ -14,12 +14,22 @@
   
 ### 2020/7/19-2020/7/25
 
-现状：学习graphviz，以便自己看懂代码，但是看教程困难重重。[教程：十分钟学会graphviz画图](https://www.jianshu.com/p/6d9bbbbf38b1)  
-问题一：系统路径  
-安装在任意喜欢的位置。但是需要把安装目录的graphviz\bin加入环境变量PATH里，环境变量配置：  
-桌面计算机右键“属性”→高级系统设置→环境变量→系统变量Path后分号加入graphviz\bin文件完整路径名（其实安装是可以设置加入，不过被杀毒软件阻止了）  
-问题二：运行文件时（输入dot -Tpng first.dot -o first.png），显示Format: "pdf" not recognized。  
-解决方法：https://gitlab.com/graphviz/graphviz/-/issues/1315  
+学习现状：学习graphviz，以便自己看懂代码，但是看教程困难重重。  
+
+####  graphviz安装使用问题
+[参考教程：十分钟学会graphviz画图](https://www.jianshu.com/p/6d9bbbbf38b1) 
+
+##### 问题
+
+1：不知道什么是系统路径，怎么把安装目录的graphviz\bin加入环境变量PATH里
+2：运行文件时（输入dot -Tpng first.dot -o first.png），显示Format: "pdf" not recognized。  
+ 
+
+##### 解决过程
+1.环境变量配置：[参考教程](https://jingyan.baidu.com/article/67508eb404634f9cca1ce4ea.html)  
+桌面计算机右键“属性”→高级系统设置→环境变量→系统变量Path后分号加入graphviz\bin文件完整路径名。之后应该不用重启电脑，重新打开终端(如VSCode)即可。
+原因：其实安装是可以设置加入path，不过杀毒软件360安全卫士弹出窗口阻止，这是要点击允许。   
+2.解决方法：https://gitlab.com/graphviz/graphviz/-/issues/1315    
 即终端输入dot.exe -c，之后就正常了。（至少我是这样的）  
    
    
