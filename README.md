@@ -22,7 +22,8 @@
  2.分配任务。我的任务：Launchviz工具中分析ARG参数，分析python相关的message      
  3.简要讲解graph.py代码，任务：添加注释     
  
- #### 2020/7/23晚与Alex小会议
+ #### 2020/7/23晚小会议
+ 参会人：聂翔宇，周智维
  1.解决我看graph.py代码遇到的一些细节问题：不知道engine,attr，node等含义以及用法，类的初始化方法
     解决方法：分清graphviz软件与graphviz包的区别。      
     graphviz软件介绍见官网：http://www.graphviz.org/  
