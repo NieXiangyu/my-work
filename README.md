@@ -30,12 +30,13 @@
     graphviz包介绍见官网：https://graphviz.readthedocs.io/en/stable/   
  2.讲解代码注释应有的写法格式：  
    '''        
-      ;param 参数 :参数含义     
-      ;type 参数 :参数类型      
-      ;return :    
-      ;rtype :(后两个说明返回参数含义与类型）     
+      :param 参数 :参数含义     
+      :type 参数 :参数类型      
+      :return :    
+      :rtype :(后两个说明返回参数含义与类型）     
            
    '''      
+  3.说明graph.py代码中定义的1,2,3,101,等数字与官方已下载包与类型的要求无关，只是自己定义   
    
     
     
