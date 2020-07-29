@@ -36,7 +36,30 @@
       :rtype :(后两个说明返回参数含义与类型）     
            
    '''      
-  3.说明graph.py代码中定义的1,2,3,101,等数字与官方已下载包与类型的要求无关，只是自己定义   
+  3.说明graph.py代码中定义的1,2,3,101,等数字与官方已下载包与类型的要求无关，只是自己定义    
+  
+  #### 2020/7/30晚小会议
+ 参会人：聂翔宇，周智维，赵作竑  
+ 1.解决我在Ubuntu虚拟机（ https://course.educg.net/ 在线平台）上问题运行 https://github.com/Alexzhoucs/AV-Arch-analyzing-tool.git 中的测试文件时问题   
+   问题：运行时显示No module named 'graphviz',但是写的dot文件成功画出了图  
+   解决方法：虽然已经通过apt-get install graphviz命令安装了软件，却没有pip install graphviz安装相关包，输入命令安装包即可解决，在Ubuntu上比要上官网下载的windows上便利    
+ 2. 运行时产生python3兼容问题, python3运行ros方法报错： No module named 'rospkg'      
+    原因：本模块开发时使用了大量 Python3 的语法，但 rospkg 包仅支持 Python2，因此目前使用 Python2 运行会报错不支持格式，而使用 Python3 运行会报错找不到 rospkg 包。    
+    解决： 更新 `pip3` 后按[此教程](https://blog.csdn.net/weixin_43046653/article/details/102930894)操作即可解决       
+          主要是安装三个相关支持包  
+            ```    
+            $ sudo apt install python3-pip   
+            $ sudo pip3 install rospkg   
+            $ sudo pip3 install netifaces   
+            $ sudo pip3 install defusedxml   
+            ``` 
+        小插曲：中途运行sudo pip3 install rospkg 时连接国外网站被墙，速度极慢。
+        解决：在文件/etc/apt/source.listd/中将国外网站链接变为[科大镜像](http://mirrors.ustc.edu.cn/)网站上ros中源地址，将软件源添加至系统，详情：      
+        http://mirrors.ustc.edu.cn/help/ros.html      
+       
+ 3. 引导我使用已有launchviz程序画简单图，定下目标：熟悉整个工具，进行注释，完全看懂代码后目标分析参数并改进。
+ 
+   
    
     
     
