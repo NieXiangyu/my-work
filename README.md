@@ -44,7 +44,7 @@
    问题：运行时显示No module named 'graphviz',但是写的dot文件成功画出了图  
    解决方法：虽然已经通过apt-get install graphviz命令安装了软件，却没有pip install graphviz安装相关包，输入命令安装包即可解决，在Ubuntu上比要上官网下载的windows上便利    
  2. 运行时产生python3兼容问题, python3运行ros方法报错： No module named 'rospkg'      
-    原因：本模块开发时使用了大量 Python3 的语法，但 rospkg 包仅支持 Python2，因此目前使用 Python2 运行会报错不支持格式，而使用 Python3 运行会报错找不到 rospkg 包。    
+    原因：ROS默认支持 Python2，而Launchviz使用python3开发，故使用 Python3 运行会报错找不到 rospkg 包。    
     解决： 更新 `pip3` 后按[此教程](https://blog.csdn.net/weixin_43046653/article/details/102930894)操作即可解决       
           主要是安装三个相关支持包  
             ```    
