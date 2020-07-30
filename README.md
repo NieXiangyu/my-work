@@ -57,7 +57,7 @@
         解决：在文件/etc/apt/source.listd/中将国外网站链接变为[科大镜像](http://mirrors.ustc.edu.cn/)网站上ros中源地址，将软件源添加至系统，详情：      
         http://mirrors.ustc.edu.cn/help/ros.html      
        
- 3. 引导我使用已有launchviz程序画简单图，定下目标：熟悉整个工具，进行注释，完全看懂代码后目标分析参数并改进。
+ 3. 引导我使用已有launchviz程序画简单图，定下目标：熟悉整个工具，进行注释，完全看懂代码后目标分析参数并改进。对Launchviz增加对launch文件中参数的分析。
  
    
    
