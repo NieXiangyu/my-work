@@ -60,10 +60,10 @@
  3. 引导我使用已有launchviz程序画简单图，定下目标：熟悉整个工具，进行注释，完全看懂代码后目标分析参数并改进。对Launchviz增加对launch文件中参数的分析。
  
   ### 2020/7/26-2020/8/1  
-     学习情况：看懂了代码Graph.py已经附属程序，完成graphvis的作图练习，学会了用graphviz以及周智维代码Graph.py作图。   
-     目标:    熟悉xml文件，解析launch文件参数  
-     正在进行:  阅读解析文件部分代码analyzer.py和file.py，这部分耗时较久，无论是xml文件还是DOM对象都不太懂   
-     计划: 1.完成小任务： 编写程序提取并输出launch文件中arg元素的属性name和default的值，结合官方文档弄懂代码。       
+  学习情况：看懂了代码Graph.py已经附属程序，完成graphvis的作图练习，学会了用graphviz以及周智维代码Graph.py作图。   
+  目标:    熟悉xml文件，解析launch文件参数  
+  正在进行:  阅读解析文件部分代码analyzer.py和file.py，这部分耗时较久，无论是xml文件还是DOM对象都不太懂   
+  计划: 1.完成小任务： 编写程序提取并输出launch文件中arg元素的属性name和default的值，结合官方文档弄懂代码。       
            2.试着改进代码    
 
       
