@@ -64,7 +64,8 @@
   目标:    熟悉xml文件，解析launch文件参数  
   正在进行:  阅读解析文件部分代码analyzer.py和file.py，这部分耗时较久，无论是xml文件还是DOM对象都不太懂   
   计划: 1.完成小任务： 编写程序提取并输出launch文件中arg元素的属性name和default的值，结合官方文档弄懂代码。       
-           2.试着改进代码    
+        2.试着改进代码  
+ 资料链接：[xml.dom官方文档](https://docs.python.org/2/library/xml.dom.minidom.html)    
 
       
 
