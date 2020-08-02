@@ -73,10 +73,11 @@
           [xml.etree.ElementTree官方文档](https://docs.python.org/2/library/xml.etree.elementtree.html#module-xml.etree.ElementTree)   
           [Python XML 解析](https://www.runoob.com/python/python-xml.html)     
           [XML DOM 教程](https://www.runoob.com/dom/dom-tutorial.html)   
-          [XML教程](https://www.runoob.com/xml/xml-tutorial.html)
-          [XML学习要点总结](https://github.com/NieXiangyu/my-work/blob/master/XML%E5%AD%A6%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93)
+          [XML教程](https://www.runoob.com/xml/xml-tutorial.html)   
+          
  
  ### 2020/8/2-2020/8/8  
+   [XML学习要点总结](https://github.com/NieXiangyu/my-work/blob/master/XML%E5%AD%A6%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93)     
    #### 2020/8/8晚线上小会议  
    参会人：聂翔宇，周智维，张老师    
    目标:  熟悉xml文件，解析launch文件参数  
