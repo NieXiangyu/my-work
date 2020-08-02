@@ -1,0 +1,32 @@
+# 教程：https://docs.python.org/2/library/xml.etree.elementtree.html#module-xml.etree.ElementTree  
+ 从磁盘读取文件： 
+ import xml.etree.ElementTree as ET   
+ tree = ET.parse('xxxx.xml')   
+ root = tree.getroot()  
+ 
+ 作为Element，root具有标签和属性字典，分别用root.tag与root.attrib查看   
+ 它还具有子节点，我们可以对其进行迭代查看：   
+ for child in root:    
+     print child.tag, child.attrib   
+ 子节点是嵌套的，我们可以通过索引访问特定的子级节点：root[0][1].text
+ 
+ 类：xml.etree.ElementTree.Element元素类。此类定义Element接口，并提供此接口的参考实现。   
+ tag：一个字符串，用于标识此元素表示的数据类型（换句话说，元素类型）   
+ attrib：包含元素属性的字典。请注意，尽管 attrib值始终是真正的可变Python字典，但是ElementTree实现可以选择使用其他内部表示形式，并且仅在有人要求时创建字典。    
+       要利用这些实现，请尽可能使用下面的字典方法。    
+       items（）：以（名称，值）对的序列形式返回元素属性。属性以任意顺序返回。     
+       keys（）：返回元素属性名称作为列表。名称以任意顺序返回。    
+       以下方法适用于元素的子元素（子元素）：  
+       append（子元素）：将元素子元素添加到此元素内部子元素列表的末尾。   
+       iter(tag=None)：创建一个以当前元素为根的树迭代器。迭代器以文档（深度优先）顺序遍历此元素及其下的所有元素。   
+         如果tag不是None或'*'，则仅从迭代器返回其标签等于tag的元素。如果在迭代过程中修改树结构，则结果不确定。
+       
+ # 教程：https://www.runoob.com/python/python-xml.html    
+ 使用minidom解析器打开 XML 文档：  
+  DOMTree = xml.dom.minidom.parse("xxxx.xml")  
+  collection = DOMTree.documentElement  
+  在集合中获取所有指定标签的元素    
+  tags = collection.getElementsByTagName("tag")  
+  for tag in tags:
+       tag.getAttribute("title") (获取指定属性信息）  
+       type = tag.getElementsByTagName('type')[0] (获取指定子元素信息）     
