@@ -69,7 +69,18 @@
   正在进行:  阅读解析文件部分代码analyzer.py和file.py，这部分耗时较久，无论是xml文件还是DOM对象都不太懂   
   计划: 1.完成小任务： 编写程序提取并输出launch文件中arg元素的属性name和default的值，结合官方文档弄懂代码。       
         2.试着改进代码  
- 资料链接：[xml.dom官方文档](https://docs.python.org/2/library/xml.dom.minidom.html)    
+ 资料链接：[xml.dom官方文档](https://docs.python.org/2/library/xml.dom.minidom.html) 
+ 
+ ### 2020/8/2-2020/8/8  
+   #### 2020/8/8晚线上小会议  
+   参会人：聂翔宇，周智维，张老师    
+   目标:  熟悉xml文件，解析launch文件参数  
+   done:  完成编写程序提取并输出launch文件中arg元素的属性name和default的值的小任务，熟悉了xml.dom.minium与xml.etree.ElementTree的用法
+   todo:  1.继续深入学习launch(xml)文件解析有关内容，学习roslaunch与 rospkg.common有关内容，以求完全读懂analyzer.py和file.py   
+          2.完成小任务：编写程序，找出launch文件中参数$使用部分，对使用情况进行总结，参考教程：http://wiki.ros.org/roslaunch/XML  
+          
+   
+   
 
       
 
