@@ -83,11 +83,11 @@
    目标:  熟悉xml文件，解析launch文件参数  
    done:  完成编写程序提取并输出launch文件中arg元素的属性name和default的值的小任务，熟悉了xml.dom.minium与xml.etree.ElementTree的用法   
    
-   [任务完成代码,xml.dom.minidom方式]:(https://github.com/NieXiangyu/my-work/blob/master/my_analysis.py)   
-   [任务完成代码,xml.etree.ElementTree方式]:(https://github.com/NieXiangyu/my-work/blob/master/my_analysis.py)       
+    [任务完成代码,xml.dom.minidom方式]:(https://github.com/NieXiangyu/my-work/blob/master/my_analysis.py)       
+    [任务完成代码,xml.etree.ElementTree方式]:(https://github.com/NieXiangyu/my-work/blob/master/my_analysis.py)          
    
-   todo:  1.继续深入学习launch(xml)文件解析有关内容，学习roslaunch与 rospkg.common有关内容，以求完全读懂analyzer.py和file.py   
-          2.完成小任务：编写程序，找出launch文件中参数$使用部分，对使用情况进行总结，参考教程：http://wiki.ros.org/roslaunch/XML  
+    todo:  1.继续深入学习launch(xml)文件解析有关内容，学习roslaunch与 rospkg.common有关内容，以求完全读懂analyzer.py和file.py   
+           2.完成小任务：编写程序，找出launch文件中参数$使用部分，对使用情况进行总结，参考教程：http://wiki.ros.org/roslaunch/XML  
           
    #### 2020/8/5下午小会议  
    参会人：聂翔宇，周智维  
