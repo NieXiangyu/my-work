@@ -7,6 +7,7 @@ hunter = './launch/hunter_tf.launch'
 nav_bt = './launch/navigation_bt.launch'
 rs232 = './launch/rs232_driver.launch'
 
+tags0 = xml_dom.parse('hybrid_a_star.launch').getElementsByTagName('launch')[0].childNodes
 tags1 = xml_dom.parse(point).getElementsByTagName('launch')[0].childNodes
 tags2 = xml_dom.parse(navigation).getElementsByTagName('launch')[0].childNodes
 tags3 = xml_dom.parse(hunter).getElementsByTagName('launch')[0].childNodes
@@ -73,5 +74,5 @@ def make_context(tags: list, context: dict):
     return context
 
 context0={}
-context1=make_context(tags1, context0)
+context1=make_context(tags0, context0)
 print(context1)
