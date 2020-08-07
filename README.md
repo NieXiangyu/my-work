@@ -95,9 +95,9 @@
    done: 完成任务：编写程序，找出launch文件中$(arg参数使用部分与被引用位置，与参数定义关联起来，输出定义参数所在文件中行号。任务调用xml.sax部分完成，同时初步完成xml.sax部分学习  
    Todo: 弄懂Launchviz中context（nake_context调用了roslaunch与rospkg）的含义，梳理总结context的含义与形成过程。编写程序输出单个文件的context   
    
-   [xml.sax官方文档]：(https://docs.python.org/3/library/xml.sax.html)      
-    [xml.sax相关教程]：(https://www.jianshu.com/p/9c9802ab4989)     
-    [任务完成代码]: (https://github.com/NieXiangyu/my-work/blob/master/my_find_arg.py)      
+   [xml.sax官方文档]：(https://docs.python.org/3/library/xml.sax.html)        
+   [xml.sax相关教程]：(https://www.jianshu.com/p/9c9802ab4989)       
+   [任务完成代码]: (https://github.com/NieXiangyu/my-work/blob/master/my_find_arg.py)        
    
    说明：程序查找了arg定义所在行号与$(arg 出现语句所在行号。此处行号从<launch>开始算第一行，且无视空行，每读一个元素行号的计数+1。      
    实现方式：xml.sax.ContentHandler部分的分析方法是一个一个元素读取，无视子节点关系，每读取一次行号计数+1，故没有内容的空行不会记录，所以打开文件左边的行号与此处计数不一致。     
