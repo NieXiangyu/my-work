@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+
+  <rosparam file="$(find sim_control)/config/sim_control.yaml" command="load"/>
+
+    <!-- load the controller -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+      output="screen" ns="/rbcar" args="left_front_shock_controller
+        left_steering_joint_controller
+        left_front_axle_controller
+        right_front_shock_controller
+        right_steering_joint_controller
+        right_front_axle_controller
+        left_rear_shock_controller
+        left_rear_axle_controller
+        right_rear_shock_controller
+        right_rear_axle_controller
+        joint_read_state_controller
+        "/>
+    <!-- conver joint states to TF -->
+    <!--node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+      respawn="false" output="screen">
+	  <param name="ues_gui" value="TRUE"/>
+      <remap from="/joint_states" to="/rbcar/joint_states"/>
+    </node-->
+</launch>

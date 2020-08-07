@@ -69,8 +69,36 @@
   正在进行:  阅读解析文件部分代码analyzer.py和file.py，这部分耗时较久，无论是xml文件还是DOM对象都不太懂   
   计划: 1.完成小任务： 编写程序提取并输出launch文件中arg元素的属性name和default的值，结合官方文档弄懂代码。       
         2.试着改进代码  
- 资料链接：[xml.dom官方文档](https://docs.python.org/2/library/xml.dom.minidom.html)    
-
+ 资料链接：[xml.dom官方文档](https://docs.python.org/2/library/xml.dom.minidom.html)  
+          [xml.etree.ElementTree官方文档](https://docs.python.org/2/library/xml.etree.elementtree.html#module-xml.etree.ElementTree)   
+          [Python XML 解析](https://www.runoob.com/python/python-xml.html)     
+          [XML DOM 教程](https://www.runoob.com/dom/dom-tutorial.html)   
+          [XML教程](https://www.runoob.com/xml/xml-tutorial.html)   
+          
+ 
+ ### 2020/8/2-2020/8/8  
+   [XML学习要点总结](https://github.com/NieXiangyu/my-work/blob/master/XML%E5%AD%A6%E4%B9%A0%E8%A6%81%E7%82%B9%E6%80%BB%E7%BB%93)     
+   #### 2020/8/2晚线上小会议  
+   参会人：聂翔宇，周智维，张老师    
+   目标:  熟悉xml文件，解析launch文件参数  
+   done:  完成编写程序提取并输出launch文件中arg元素的属性name和default的值的小任务，熟悉了xml.dom.minium与xml.etree.ElementTree的用法
+   todo:  1.继续深入学习launch(xml)文件解析有关内容，学习roslaunch与 rospkg.common有关内容，以求完全读懂analyzer.py和file.py   
+          2.完成小任务：编写程序，找出launch文件中参数$使用部分，对使用情况进行总结，参考教程：http://wiki.ros.org/roslaunch/XML  
+          
+   #### 2020/8/5下午小会议  
+   参会人：聂翔宇，周智维  
+   目标：解析launch文件参数，读懂并改进Launchviz部分  
+   done: 完成任务：编写程序，找出launch文件中$(arg参数使用部分与被引用位置，与参数定义关联起来，输出定义参数所在文件中行号。任务调用xml.sax部分完成，同时初步完成xml.sax部分学习  
+   Todo: 弄懂Launchviz中context（nake_context调用了roslaunch与rospkg）的含义，梳理总结context的含义与形成过程。编写程序输出单个文件的context   
+   
+   [xml.sax官方文档]：https://docs.python.org/3/library/xml.sax.html   
+    xml.sax相关教程：https://www.jianshu.com/p/9c9802ab4989     
+   
+   说明：程序查找了arg定义所在行号与$(arg 出现语句所在行号。此处行号从<launch>开始算第一行，且无视空行，每读一个元素行号的计数+1。      
+   实现方式：xml.sax.ContentHandler部分的分析方法是一个一个元素读取，无视子节点关系，每读取一次行号计数+1，故没有内容的空行不会记录，所以打开文件左边的行号与此处计数不一致。     
+   要得到直观上看上去文件中行号（相当于当做.txt文件处理），直接f.readlines(),f.writelines()计数，但是这样体现不出xml文件结构特点，暂时不完成，因为觉得应该没有此需求，有需求之后考虑完成。  
+  
+      
       
 
  

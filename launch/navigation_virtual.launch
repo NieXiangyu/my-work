@@ -1,0 +1,10 @@
+<?xml version = "1.1"?>
+<launch>
+    <!--include file="$(find pointcloud_to_laserscan)/launch/pointcloud_to_laserscan.launch"/-->
+    <include file="$(find sim_odom)/launch/sim_odom.launch"/>
+    <include file="$(find mr_bringup)/launch/nav/stage/nav_stage_linke_map.launch"/>
+    <include file="$(find mr_nav)/launch/hybrid_a_star.launch"/>
+    <include file="$(find path_follower)/launch/waypoint_planner.launch"/>
+    <include file="$(find path_follower)/launch/path_follower.launch"/>
+</launch>
+

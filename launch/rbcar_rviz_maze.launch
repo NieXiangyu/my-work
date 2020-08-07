@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- roslaunch arguments -->
+  <arg name="debug" default="false"/>
+  <arg name="gui" default="true"/>
+
+  
+  <include file="$(find sim_control)/launch/sim_control.launch"/>
+  <!--node pkg="tf" type="static_transform_publisher" name="car_to_map" args="0 0 0 0 0 0 /odom /base_footprint 10"/-->
+  <!-- rbcar_joy launch file -->
+  <!-- Include this file only if you wish a the control the robot via joystick, it has to be commented if you want to set goals for autonomous navigation -->
+  <!-- for this node to work correctly first you need to succesfully connect the ps3 joystick with:
+		sudo su
+		rosrun ps3joy sixpair
+		rosrun ps3joy ps3joy.py
+  -->
+  <!-- include file="$(find rbcar_joystick)/launch/rbcar_joy.launch" / -->
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find sim_environment)/worlds/maze.world"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="headless" value="false"/>
+  </include>
+  <!--rosparam file="$(find sim_environment)/config/sim_car_joints.yaml"/-->
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description"
+         command="$(find xacro)/xacro '$(find rbcar_description)/robots/rbcar.urdf.xacro' --inorder" />
+         
+  <!-- Call a python script to the run a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-urdf -model rbcar -param robot_description -z 0.01"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+	<remap from="/joint_states" to="/rbcar/joint_states"/>
+  </node>
+  <node pkg="rviz" type="rviz" name="rviz" respawn="false" output="screen" args="-d $(find rbcar_description)/launch/rbcar.rviz"/>
+  <include file="$(find rbcar_control)/launch/rbcar_sim_control.launch"/>
+  <include file="$(find pointcloud_to_laserscan)/launch/pointcloud_to_laserscan.launch"/>
+  <!--include file="$(find sim_odom)/launch/sim_odom.launch"/-->
+</launch>

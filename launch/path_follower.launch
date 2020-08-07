@@ -1,0 +1,42 @@
+<!-- -->
+<launch>
+<!-- frame_id设置 -->
+	<arg name="frame_id" default="odom" />
+	<arg name="final_waypoints_topic" default="final_waypoints" />
+	<arg name="cur_pos_topic" default="/cur_pose" />
+	<arg name="cur_vel_topic" default="/cur_twist" />
+	<arg name="ctrl_cmd_topic" default="/move_base_node/HybridAStar/ctrl_cmd" />
+
+<!-- 启动pure_pursuit节点进行路径点跟随 -->
+	<arg name="is_linear_interpolation" default="True"/>
+	<arg name="publishes_for_steering_robot" default="True"/>
+	<arg name="param_flag" value="1"/>
+	<arg name="velocity" value="2"/>
+	<arg name="lookahead_distance" value="0.5"/>
+	<arg name="lookahead_ratioag" value="3"/>
+	<arg name="minimum_lookahead_distance" value="0.2"/>
+	<!--<arg name="displacement_threshold" value="0.0"/>
+	<arg name="relative_angle_threshold" value="0.0"/>-->
+	<arg name="wheel_base" value="0.2"/>
+
+	<!-- rosrun waypoint_follower pure_pursuit -->
+	<node pkg="path_follower" type="path_follower_node" name="path_follower_node" output="screen">
+		<param name="frame_id" value="$(arg frame_id)" />
+		<param name="sub_final_waypoints_topic" value="$(arg final_waypoints_topic)" />
+		<param name="sub_cur_pos_topic" value="$(arg cur_pos_topic)" />
+		<param name="sub_cur_vel_topic" value="$(arg cur_vel_topic)" />
+		<param name="pub_ctrl_cmd_topic" value="$(arg ctrl_cmd_topic)" />
+
+		<param name="is_linear_interpolation" value="$(arg is_linear_interpolation)"/>
+		<param name="publishes_for_steering_robot" value="$(arg publishes_for_steering_robot)"/>
+		<param name="param_flag" value="$(arg param_flag)"/>
+		<param name="velocity" value="$(arg velocity)"/>
+		<param name="lookahead_distance" value="$(arg lookahead_distance)"/>
+		<param name="lookahead_ratioag" value="$(arg lookahead_ratioag)"/>
+		<param name="minimum_lookahead_distance" value="$(arg minimum_lookahead_distance)"/>
+		<!--<param name="displacement_threshold" value="$(arg displacement_threshold)"/>
+		<param name="relative_angle_threshold" value="$(arg relative_angle_threshold)"/>-->
+		<param name="wheel_base" value="$(arg wheel_base)"/>
+		<param name="frame_id" value="$(arg frame_id)" />
+	</node>
+</launch>

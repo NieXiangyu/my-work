@@ -1,0 +1,9 @@
+<?xml version="1.1"?>
+<launch>
+    <!--node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 /map /odom 10"/-->
+    <!--include file="$(find sim_odom)/launch/sim_odom.launch"/-->
+    <!--node pkg="tf" type="static_transform_publisher" name="tmp_odom_to_bp" args="0 0 0 0 0 0 /odom /base_link 50"/-->
+    <!--node pkg="tf" type="static_transform_publisher" name="base_footprint_to_base_link" args="0 0 0.1 0 0 0 /base_footprint /base_link 50"/-->
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_lidar" args="0 0 0.5 0 0 0 /base_link /rslidar 10"/>
+
+</launch>

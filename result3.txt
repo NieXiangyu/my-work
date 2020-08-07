@@ -1,0 +1,14 @@
+<include file=$(find mr_nav)/launch/amcl.launch/>
+<param value=$(arg use_sim_time)/>
+<rosparam file=$(find mr_nav)/cfg/hybrid/costmap_common_params.yaml/>
+<rosparam file=$(find mr_nav)/cfg/hybrid/costmap_common_params.yaml/>
+<rosparam file=$(find mr_nav)/cfg/hybrid/local_costmap_params.yaml/>
+<rosparam file=$(find mr_nav)/cfg/hybrid/global_costmap_params.yaml/>
+<rosparam file=$(find mr_nav)/cfg/hybrid/base_global_planner_params.yaml/>
+<rosparam file=$(find mr_nav)/cfg/hybrid/hybrid_a_star_params.yaml/>
+<rosparam file=$(find mr_nav)/cfg/hybrid/costmap_converter_params.yaml/>
+<arg value=$(arg namespace)/>
+<arg value=$(arg scan_topic)/>
+<arg value=$(arg initial_pose_x)/>
+<arg value=$(arg initial_pose_y)/>
+<arg value=$(arg initial_pose_a)/>

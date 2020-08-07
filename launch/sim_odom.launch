@@ -1,0 +1,10 @@
+<?xml version="1.1"?>
+
+<launch>
+    <node name="sim_odom" pkg="sim_odom" type="sim_odom_node" output="screen">
+        <param name="odom_topic" value="odom"/>
+        <param name="cur_twist_topic" value="cur_twist"/>
+        <param name="cur_pose_topic" value="cur_pose"/>
+        <param name="amcl_pose_topic" value="/amcl_pose"/>
+    </node>
+</launch>

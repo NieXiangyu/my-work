@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node name="rs232_driver" type="rs232_driver_node" pkg="rs232_driver" output="screen">
+        <rosparam>
+            device: /dev/ttyUSB0
+            bound_rate: 115200
+            pub_machine_status_topic: /sub_origin_machine_data
+            pub_control_status_topic: /sub_origin_control_data
+            sub_control_topic: /can_control_server
+            control_service_name: /can_control_service
+            sync_counter_topic: /can_sync_counter
+            timeout: 1000
+        </rosparam>
+    </node>
+    <node name="can_client" type="can_send_client" pkg="rs232_driver" output="screen">
+	<rosparam>
+            server_name: /can_control_server
+            can_linear_velocity: /can_linear_velocity
+            can_angular_velocity: /can_angular_velocity
+            can_control_msg: /can_control_msg
+            can_control_mode: /can_control_mode
+            can_clear_error: /can_clear_error
+        </rosparam>
+    </node>
+    <node name="can_format" type="can_data_format" pkg="rs232_driver" output="screen">
+        <rosparam>
+            sub_origin_machine: /sub_origin_machine_data
+            sub_origin_control: /sub_origin_control_data
+            pub_format_machine: /pub_format_machine_data
+            pub_format_control: /pub_format_control_data
+        </rosparam>
+    </node>
+</launch>

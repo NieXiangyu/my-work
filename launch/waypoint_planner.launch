@@ -1,0 +1,12 @@
+<?xml version="1.1"?>
+<launch>
+<!-- 最终路径点发布final_waypoint -->
+<arg name="pub_final_waypoints_topic" default="final_waypoints" />
+<arg name="sub_cur_pos_topic" default="cur_pose" />
+<arg name="sub_base_waypoint_topic" default="/move_base_node/HybridAStar/local_waypoint" />
+<node pkg="path_follower" type="waypoint_planner_node" name="waypoint_planner_node" output="screen">
+    <param name="pub_final_waypoints_topic" value="$(arg pub_final_waypoints_topic)" />
+    <param name="sub_cur_pos_topic" value="$(arg sub_cur_pos_topic)" />
+    <param name="sub_base_waypoint_topic" value="$(arg sub_base_waypoint_topic)" />
+</node>
+</launch>

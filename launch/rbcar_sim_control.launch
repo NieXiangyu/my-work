@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="rbcar_control" pkg="rbcar_control" type="rbcar_control_node" output="screen"/>
+
+    <node name="sim_control" pkg="sim_control" type="sim_control_node" output="screen"/>
+
+</launch>
