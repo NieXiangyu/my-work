@@ -11,32 +11,38 @@ class LaunchHandler(xml.sax.ContentHandler):
     def __init__(self, file_out):
         self.CurrentTag = ""
         self.arg_list = {}
-        self.Currentline = 0
-        self.file=file_out
+        self.file = file_out
+        self.locator = None
 
 
     def startDocument(self):
-        self.f=open(self.file,"w")
+        self.f = open(self.file,"w")
+    
+    def setDocumentLocator(self, locator):
+        self.locator = locator
 
     # 元素开始事件处理
     #行号从<launch>开始算第一行
     def startElement(self, tag, attr):
         self.CurrentTag = tag
-        self.Currentline = self.Currentline+1
+        if self.locator is not None:
+            current_line, current_col = self.locator.getLineNumber(), self.locator.getColumnNumber()
+        else:
+            current_line, current_col = 'unknown', 'unknown'
+        
         if tag == 'arg' and 'default' in attr.keys():
-            self.arg_list[attr['name']]=(attr['default'], self.Currentline)
+            self.arg_list[attr['name']] = (attr['default'], current_line, current_col)
         for ele in attr.values():
             if '$(arg ' in ele:
-                line='<'+tag+' '
+                line = 'line {0}: <{1} '.format(current_line, tag)
                 for key, value in attr.items():
                     if '$(arg' in value:
-                        nvalue1=value[value.find('$')+6: value.find(')')]
-                        nvalue2=self.arg_list[nvalue1][0]
-                        line = line + key + '="' + nvalue2 + '"'
+                        nvalue1 = value[value.find('$')+6: value.find(')')]
+                        nvalue2 = self.arg_list[nvalue1][0]
+                        line += key + '="' + nvalue2 + '"'
                     else:
-                        line = line + key + '="' + value + '" '
-                line=line + '/>' + '(' + nvalue1 + '->' + nvalue2 + ')' + 'define: line:' + str(self.arg_list[nvalue1][1]) + '\n'
-                line='line:' + str(self.Currentline) + ': ' +line
+                        line += key + '="' + value + '" '
+                line += '/> ({0}->{1})\n\tdefined at line {2}, column{3}\n'.format(nvalue1, nvalue2, self.arg_list[nvalue1][1], self.arg_list[nvalue1][2])
                 self.f.writelines(line)
 
     def endDocument(self):
