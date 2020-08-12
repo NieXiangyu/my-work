@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 use_map_topic=true
 scan_topic=/hokuyo/scan
 initial_pose_x=0.0
@@ -8,3 +9,15 @@ tf_prefix=
 odom_frame_id=odom
 base_frame_id=base_footprint
 global_frame_id=map
+=======
+use_map_topic=true
+scan_topic=/hokuyo/scan
+initial_pose_x=0.0
+initial_pose_y=0.0
+initial_pose_a=0.0
+odom_model_type=diff
+tf_prefix=
+odom_frame_id=odom
+base_frame_id=base_footprint
+global_frame_id=map
+>>>>>>> 81b9008b22998489e315a6e625b939302f030a90

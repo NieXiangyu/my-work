@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version='1.0' encoding='UTF-8' ?>
 <users>
     <user id='1'>
@@ -15,4 +16,23 @@
         <email>user3@qq.com</email>
         <age>23</age>
     </user>
+=======
+<?xml version='1.0' encoding='UTF-8' ?>
+<users>
+    <user id='1'>
+        <username>admin</username>
+        <email>admin@qq.com</email>
+        <age>21</age>
+    </user>
+    <user id='2'>
+        <username>user2</username>
+        <email>user2@qq.com</email>
+        <age>22</age>
+    </user>
+    <user id='3'>
+        <username>user3</username>
+        <email>user3@qq.com</email>
+        <age>23</age>
+    </user>
+>>>>>>> 81b9008b22998489e315a6e625b939302f030a90
 </users>

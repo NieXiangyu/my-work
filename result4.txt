@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 line:9: <param name="/use_sim_time" value="true"/>(use_sim_time->true)define: line:2
 line:32: <arg name="tf_prefix" value=""/>(namespace->)define: line:3
 line:33: <arg name="scan_topic" value="/scan"/>(scan_topic->/scan)define: line:7
 line:36: <arg name="initial_pose_x" value="0"/>(initial_pose_x->0)define: line:4
 line:37: <arg name="initial_pose_y" value="0"/>(initial_pose_y->0)define: line:5
 line:38: <arg name="initial_pose_a" value="0"/>(initial_pose_a->0)define: line:6
+=======
+line:9: <param name="/use_sim_time" value="true"/>(use_sim_time->true)define: line:2
+line:32: <arg name="tf_prefix" value=""/>(namespace->)define: line:3
+line:33: <arg name="scan_topic" value="/scan"/>(scan_topic->/scan)define: line:7
+line:36: <arg name="initial_pose_x" value="0"/>(initial_pose_x->0)define: line:4
+line:37: <arg name="initial_pose_y" value="0"/>(initial_pose_y->0)define: line:5
+line:38: <arg name="initial_pose_a" value="0"/>(initial_pose_a->0)define: line:6
+>>>>>>> 81b9008b22998489e315a6e625b939302f030a90
