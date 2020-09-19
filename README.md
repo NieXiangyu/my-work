@@ -109,4 +109,6 @@
    确定目标：返校之后在笔记本电脑上配置好所有文件后运行Launchviz示例。    
 
 ### 2020/9/14-2020/9/19
+    完成：安装 Turtlebot，[参考教程]:(https://github.com/S4Plus/ABC/blob/master/ROS/Turtlebot.md)
+    安装Turtlebot问题与解决：()
      
