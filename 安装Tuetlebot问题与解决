@@ -6,6 +6,6 @@
 ![](./problem3.png)
 ![](./problem4.png)
 查百度，解决方案：    
-![](./problem5.png))
+![](./problem5.png)
 尝试过后，rosdep install --from-paths src -i -y 还是不行   
 解决方法：输入rosdep install --from-paths src -i，之后安装时一直点Y，麻烦一些而已。          
