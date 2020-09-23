@@ -1,0 +1,13 @@
+#python语法：     
+self.__class__ ：表示当前实例对象的类，实例调用__class__属性时会指向该实例对应的类，然后可以再去调用其它类属性，类属性由类调用。      
+[参考](https://blog.csdn.net/aaa958099161/article/details/90177791)     
+
+super() 函数是用于调用父类(超类)的一个方法。    
+[参考](https://www.runoob.com/python/python-func-super.html)     
+
+
+
+
+
+
+
