@@ -112,3 +112,17 @@
    完成：安装 Turtlebot，[参考教程]:(https://github.com/S4Plus/ABC/blob/master/ROS/Turtlebot.md)            
    [安装Turtlebot问题与解决]：(https://github.com/NieXiangyu/my-work/blob/master/%E5%AE%89%E8%A3%85Tuetlebot%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3)
      
+### 2020/9/20-2020/9/27  
+
+   #### 9/24晚小会议    
+        参会人：聂翔宇，周智维，赵作竑，龚磊  
+        内容：1.测试龚磊的paramtest.cpp程序，以更好地理解launch文件中各参数作用，remap与namespace的设置对node的影响。
+                （毕竟ros.wiki对这些参数的讲解太简略）
+        remap: 将from后的参数（来源于原来文件）名映射为to后面的参数（定义在本launch文件中），用来管理太多冲突的名字。   
+        （remap from A to B, remap from B to C后果不明，有待讨论，暂且当成未定义的错误行为）  
+        param: 直接使用只能设置参数值，没法改变topic名字，改变topic名字需要remap。   
+               或者间接使用：原文件中声明字符串p1_value,Nodehandle类的n1设置默认值n1.param("p1",p1_value,std::("p1_value"))
+               launch文件中定义<param name="p1", value="p1111"> ,这样p1_value="p1111"，改变p1111改变p1_value，后面   
+               std::("p1_value")设置默认值，未定义参数值时使用。  
+        
+        
