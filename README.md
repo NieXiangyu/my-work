@@ -124,5 +124,5 @@
                或者间接使用：原文件中声明字符串p1_value,Nodehandle类的n1设置默认值n1.param("p1",p1_value,std::("p1_value"))
                launch文件中定义<param name="p1", value="p1111"> ,这样p1_value="p1111"，改变p1111改变p1_value，后面   
                std::("p1_value")设置默认值，未定义参数值时使用。  
-        
+        group:设置namespace,如作用与名字namespace1，它的字节点的名字之前加上namespace1/表明命名域（参数前加了/表示global除外）
         
