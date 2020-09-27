@@ -109,3 +109,28 @@
    内容：说明arg参数分析需求，简要说明launch文件rosparam,param参数含义。   
    确定目标：返校之后在笔记本电脑上配置好所有文件后运行Launchviz示例。    
 
+### 2020/9/14-2020/9/19
+   完成：安装 Turtlebot，[参考教程]:(https://github.com/S4Plus/ABC/blob/master/ROS/Turtlebot.md)            
+   [安装Turtlebot问题与解决]：(https://github.com/NieXiangyu/my-work/blob/master/%E5%AE%89%E8%A3%85Tuetlebot%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3)
+     
+### 2020/9/20-2020/9/27  
+   done:9/23晚安装完整turtlebot,roslaunch包后，成功在pycharm上运行Launchviz，相比于暑假，绘制了完整图像。
+   问题：1.pycharm中运行时invalid syntax。
+        解决：安装python3.8，编译器设定更新为python3.8.
+        2.运行显示没有roslaunch
+        解决：pycharm右键点击调出Edit Launcher,command 中设置bash -i -c '/home/niexiangyu/Downloads/pycharm-community-2020.2/bin/pycharm.sh' %f   
+        
+  
+
+   #### 9/24晚小会议    
+       参会人：聂翔宇，周智维，赵作竑，龚磊  
+       内容：1.测试龚磊的paramtest.cpp程序，以更好地理解launch文件中各参数作用，remap与namespace的设置对node的影响。
+               （毕竟ros.wiki对这些参数的讲解太简略）
+       remap: 将from后的参数（来源于原来文件）名映射为to后面的参数（定义在本launch文件中），用来管理太多冲突的名字。   
+       remap from A to B, remap from B to C后果不明，有待讨论，暂且当成未定义的错误行为）  
+       param: 直接使用只能设置参数值，没法改变topic名字，改变topic名字需要remap。   
+               或者间接使用：原文件中声明字符串p1_value,Nodehandle类的n1设置默认值n1.param("p1",p1_value,std::("p1_value"))
+               launch文件中定义<param name="p1", value="p1111"> ,这样p1_value="p1111"，改变p1111改变p1_value，后面   
+               std::("p1_value")设置默认值，未定义参数值时使用。  
+       group:设置namespace,如作用与名字namespace1，它的字节点的名字之前加上namespace1/表明命名域（参数前加了/表示global除外）
+        
