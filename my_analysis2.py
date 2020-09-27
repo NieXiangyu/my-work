@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import xml.etree.ElementTree as ET
 
 def find_arg_attr(filein, fileout):
@@ -18,7 +18,7 @@ def find_arg_attr(filein, fileout):
 find_arg_attr('D:\\我的文档\\GitHub\\my-work\\amcl.launch','result2.txt')
 
 
-=======
+
 import xml.etree.ElementTree as ET
 
 def find_arg_attr(filein, fileout):
@@ -38,4 +38,3 @@ def find_arg_attr(filein, fileout):
 find_arg_attr('D:\\我的文档\\GitHub\\my-work\\amcl.launch','result2.txt')
 
 
->>>>>>> 81b9008b22998489e315a6e625b939302f030a90

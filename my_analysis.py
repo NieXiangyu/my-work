@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 from xml.dom import minidom as xml_dom
 
@@ -15,7 +15,7 @@ def find_arg_attr(file_in: str, file_out: str):
             line=name+'='+default+'\n'
             f.writelines(line)
 find_arg_attr('amcl.launch', 'result1.txt')
-=======
+
 
 from xml.dom import minidom as xml_dom
 
@@ -32,4 +32,3 @@ def find_arg_attr(file_in: str, file_out: str):
             line=name+'='+default+'\n'
             f.writelines(line)
 find_arg_attr('amcl.launch', 'result1.txt')
->>>>>>> 81b9008b22998489e315a6e625b939302f030a90
