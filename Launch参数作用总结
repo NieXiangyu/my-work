@@ -1,0 +1,19 @@
+remap: 将from后的参数（来源于原来文件）名映射为to后面的参数（定义在本launch文件中），用来管理太多冲突的名字。   
+      remap from A to B, remap from B to C后果不明，有待讨论，暂且当成未定义的错误行为）  
+param: 直接使用只能设置参数值，没法改变topic名字，改变topic名字需要remap。   
+或者间接使用：原文件中声明字符串p1_value,Nodehandle类的n1设置默认值n1.param("p1",p1_value,std::("p1_value")),
+launch文件中定义<param name="p1", value="p1111"> ,这样p1_value="p1111"，改变p1111改变p1_value，后面std::("p1_value")设置默认值，
+未定义参数值时使用。
+group:设置namespace,如作用域名字namespace1，它的字节点的名字之前加上namespace1/表明命名域（参数前加了/表示global除外）
+
+
+node标签:在标签指定一个ROS 节点，这是最常见的roslaunch标签，因为它支持最重要的功能：启动和关闭节点。
+roslaunch不保证节点开始的顺序。因为没有办法从外部知道节点何时被完全初始化，所以所有被启动的节点必须是稳健的，以便以任何顺序启动。
+node节点中，用到的比较多的有 pkg type name args output value
+pkg =“mypackage” 节点包。
+type =“nodetype” 节点类型。必须有一个具有相同名称的相应可执行文件。
+name =“nodename”节点基名称。注意：name不能包含命名空间。请改用ns属性。
+args =“arg1 arg2 arg3” （可选）传递参数到节点。
+output 一般为screen或者log，默认为log（日志文件）
+value 给定值
+

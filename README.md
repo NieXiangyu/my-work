@@ -127,8 +127,7 @@ $ sudo pip3 install defusedxml
 
 ### 2020/9/20-2020/9/27  
    done:9/23晚安装完整turtlebot,roslaunch包后，成功在pycharm上运行Launchviz，相比于暑假，绘制了完整图像。
-   问题：
-
+问题：
 1.pycharm中运行时invalid syntax。
  解决：安装python3.8，编译器设定更新为python3.8.
 2.运行显示没有roslaunch
@@ -143,4 +142,8 @@ $ sudo pip3 install defusedxml
       remap from A to B, remap from B to C后果不明，有待讨论，暂且当成未定义的错误行为）  
       param: 直接使用只能设置参数值，没法改变topic名字，改变topic名字需要remap。   或者间接使用：原文件中声明字符串p1_value,Nodehandle类的n1设置默认值n1.param("p1",p1_value,std::("p1_value")),launch文件中定义<param name="p1", value="p1111"> ,这样p1_value="p1111"，改变p1111改变p1_value，后面std::("p1_value")设置默认值，未定义参数值时使用。
       group:设置namespace,如作用与名字namespace1，它的字节点的名字之前加上namespace1/表明命名域（参数前加了/表示global除外）
+
+
+
+#### 9/30晚小会议
 
