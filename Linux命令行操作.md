@@ -92,3 +92,5 @@ ps命令(Process Status):用来列出系统中当前运行的那些进程。ps�
 如果想要动态的显示进程信息，就可以使用top命令。
 
 history:记录执行过的命令。history [n]  n为数字，列出最近的n条命令 
+
+pwd（英文全拼：print work directory）: 命令用于显示工作目录。执行 pwd 指令可立刻得知您目前所在的工作目录的绝对路径名称。
