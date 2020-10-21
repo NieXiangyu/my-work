@@ -5,7 +5,9 @@
 此文结论：1，当remap和node平行时，from和to可以为launch文件中任意节点。
  2，当remap处于节点内部时，from必须为当前节点所定义的内容，to可以是launch文件中任意节点。
 
-该结果在之前龚磊的文件测试中，对参数进行remap得到证实，已经完善到gitlug上：param.md
+该结果在之前龚磊的文件测试中，对参数进行remap得到证实，已经完善到gitlug上：
+
+http://192.168.1.60/rosvis/launchviz/blob/master/docs/param.md
 
 
 
