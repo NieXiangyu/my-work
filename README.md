@@ -145,5 +145,17 @@ $ sudo pip3 install defusedxml
 
 
 
-#### 9/30晚小会议
+#### 2020/9/30-2020/10/8
+
+done:重新熟悉launch命令行，启动launch测试文件paramtest，在7个launch文件中测试launch参数node,remap,group,param作用，结合wiki与网上教程弄清参数作用原理。
+
+todo:自己完成7个launch测试文件之后，将各参数作用上传到gitlag补充到赵作竑工作后面，根据需求丰富Launchviz功能。
+
+
+
+2020/10/12-2020/10/23
+
+done:弄清launch文件remap参数作用原理，并运行了程序测试（与之前测试文件相比增加了订阅器），发现了remap参数作用的一个问题，讨论如何处理结果是暂时忽略这个几乎不会出现的问题。
+
+todo:Launchviz代码加上注释，为之后remap分析功能扩充做准备。
 

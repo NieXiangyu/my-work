@@ -15,6 +15,7 @@ http://192.168.1.60/rosvis/launchviz/blob/master/docs/param.md
 
 发布器talker:与param_test中一样：
 
+```cpp
   ros::init(argc, argv, "talker");
 
   ros::NodeHandle n1;
@@ -27,14 +28,14 @@ http://192.168.1.60/rosvis/launchviz/blob/master/docs/param.md
   ros::Publisher chatter_pub3 = n3.advertise<std_msgs::String>("chatter3", 1000);
 
    ros::Publisher chatter_pub4 = n1.advertise<std_msgs::String>("/chatter4", 1000);
+```
 
 订阅器：
-
+```cpp
  ros::Subscriber sub1 = n1.subscribe("chatter1", 1000, chatterCallback);
   ros::Subscriber sub2 = n1.subscribe("handle2/chatter2", 1000, chatterCallback);
   ros::Subscriber sub3 = n1.subscribe("chatter3", 1000, chatterCallback);
-
-
+```
 
 初始测试：运行rosrun beginner_tutorials talker  与 rosrun beginner_tutorials listener ，无launch文件
 

@@ -5,6 +5,16 @@ sudo命令以系统管理者的身份执行指令，也就是说，经由 sudo �
 -h 会显示版本编号及指令的使用方式说明
 -l 显示出自己（执行 sudo 的使用者）的权限
 
+ su:是最简单的身份切换名，用su我们能够进行不论什么用户的切换，一般都是su - username，然后输入password就ok了，可是root用su切换到其它身份的时候是不须要输入password的。一般我们切换身份都是切换到root，然后进行一些仅仅有root能干的事，比方改动配置文件。比方下载安装软件。这些都仅仅能是root才有权限干的事。切换到root能够是单纯的su，或者是su -和su - root，后面两个是一样的意思。 单纯使用su切换到root，读取变量的方式是non-login shell，这样的方式下非常多的变量都不会改变。尤其是PATH。所以root用的非常多的命令都仅仅能用绝对路径来运行。这样的方式仅仅是切换到root的身份。
+
+而用su -这样的方式的话，是login shell方式，它是先以root身份登录然后再运行别的操作。
+
+ 假设我们仅仅要切换到root做一次操作就好了，仅仅要在su后面加个-c參数就好了。运行完这次操作后。又会自己主动切换回我们自己的身份。
+
+区别：sudo仅仅是须要自己的password，就能够以其它用户的身份来运行命令。常常是以root的身份运行命令。
+
+
+
 apt命令：一般需要获得root，所以一般在前边加上sudo，一般格式为sudo apt-get xxx。（下文中packagename指代为软件包的名称。）
 apt-get update
 在修改/etc/apt/sources.list或/etc/apt/preferences之后运行该命令。需要定期运行这一命令以确保您的软件包列表是最新的。
@@ -14,6 +24,34 @@ apt-get remove packagename
 卸载一个已安装的软件包（保留配置文档）
 apt-get remove --purge packagename
 卸载一个已安装的软件包（删除配置文档），注意“--”符号必不可少
+
+
+
+`dpkg` :即 package manager for Debian ，是 Debian 和基于 Debian 的系统中一个主要的**包管理工具**，可以用来安装、构建、卸载、管理 `deb` 格式的软件包。
+
+使用 `dpkg` 命令安装软件时，可以使用 `-i` 选项并指定 deb 安装包的路径。和 apt-get有所不同:
+ `apt-get` 命令并不直接操作 deb 安装包文件，而是从 `/etc/apt/sources.list` 配置文件中定义的软件镜像源里下载软件包并安装，使用时也只需指定软件的名称（或者也可以附加上版本号）。
+
+apt-get 命令安装软件：
+ `$ apt-get install <package_name[=version]>`
+
+dpkg 命令安装软件：
+ `$ dpkg -i <package_file_path>`
+
+因此，dpkg 主要是用来安装已经下载到本地的 deb 软件包，或者对已经安装好的软件进行管理。而 apt-get 可以直接从远程的软件仓库里下载安装软件。
+
+可以使用 `dpkg -l` 命令列出当前系统中已经安装的软件以及软件包的**状态**。
+
+`dpkg` 命令的 `-r` 选项可以用来卸载已安装的软件包，此时只需要指定软件的名称即可。
+
+查看软件包的内容:dpkg -c <package_file_path>
+
+查看软件包（已安装）的详细信息 : `dpkg -s <package>`或  `dpkg --status <package> `
+
+查看软件包的安装位置: `dpkg -L <package>` 或 `dpkg --list-files <package>`
+筛选出包含指定文件（模式）的软件包:`dpkg -S <filename_pattern> `或 `dpkg --search <filename_pattern>`
+
+
 
 cd：cd命令用来切换工作目录至dirname。 其中dirName表示法可为绝对路径或相对路径。(cd = Change Directory) 
 
