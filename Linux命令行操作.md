@@ -5,6 +5,12 @@ sudo命令以系统管理者的身份执行指令，也就是说，经由 sudo �
 -h 会显示版本编号及指令的使用方式说明
 -l 显示出自己（执行 sudo 的使用者）的权限
 
+$ sudo [-u username] [command]
+
+-u：将身份变成username的身份
+
+
+
  su:是最简单的身份切换名，用su我们能够进行不论什么用户的切换，一般都是su - username，然后输入password就ok了，可是root用su切换到其它身份的时候是不须要输入password的。一般我们切换身份都是切换到root，然后进行一些仅仅有root能干的事，比方改动配置文件。比方下载安装软件。这些都仅仅能是root才有权限干的事。切换到root能够是单纯的su，或者是su -和su - root，后面两个是一样的意思。 单纯使用su切换到root，读取变量的方式是non-login shell，这样的方式下非常多的变量都不会改变。尤其是PATH。所以root用的非常多的命令都仅仅能用绝对路径来运行。这样的方式仅仅是切换到root的身份。
 
 而用su -这样的方式的话，是login shell方式，它是先以root身份登录然后再运行别的操作。
@@ -50,6 +56,14 @@ dpkg 命令安装软件：
 
 查看软件包的安装位置: `dpkg -L <package>` 或 `dpkg --list-files <package>`
 筛选出包含指定文件（模式）的软件包:`dpkg -S <filename_pattern> `或 `dpkg --search <filename_pattern>`
+
+
+
+ wget是一个下载文件的工具，它用在命令行下。 
+
+wget支持HTTP，HTTPS和FTP协议，可以使用HTTP代理。所谓的自动下载是指，wget可以在用户退出系统的之后在后台执行。这意味这你可以登录系统，启动一个wget下载任务，然后退出系统，wget将在后台执行直到任务完成
+
+  wget 可以跟踪HTML页面上的链接依次下载来创建远程服务器的本地版本，完全重建原始站点的目录结构。这又常被称作”递归下载”。
 
 
 
@@ -132,3 +146,16 @@ ps命令(Process Status):用来列出系统中当前运行的那些进程。ps�
 history:记录执行过的命令。history [n]  n为数字，列出最近的n条命令 
 
 pwd（英文全拼：print work directory）: 命令用于显示工作目录。执行 pwd 指令可立刻得知您目前所在的工作目录的绝对路径名称。
+
+
+
+export 命令用于设置或显示环境变量。在 shell 中执行程序时，shell 会提供一组环境变量。export 可新增，修改或删除环境变量，供后续执行的程序使用。
+
+```
+export [-fnp][变量名称]=[变量设置值]
+
+    -f 　代表[变量名称]中为函数名称。
+    -n 　删除指定的变量。变量实际上并未删除，只是不会输出到后续指令的执行环境中。
+    -p 　列出所有的shell赋予程序的环境变量。
+
+```
